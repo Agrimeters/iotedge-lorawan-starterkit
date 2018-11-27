@@ -7,7 +7,7 @@ using Xunit;
 namespace LoRaWan.IntegrationTest
 {
     // Tests Cloud to Device messages
-    [Collection("ArduinoSerialCollection")] // run in serial
+    [Collection(Constants.TestCollectionName)] // run in serial
     public sealed class C2DMessageTest : IntegrationTestBase
     {
         static Random random = new Random();
@@ -35,7 +35,7 @@ namespace LoRaWan.IntegrationTest
         public async Task Test_OTAA_Confirmed_Receives_C2D_Message()
         {
             var device = this.TestFixture.Device9_OTAA;
-            Log($"Starting {nameof(Test_OTAA_Confirmed_Receives_C2D_Message)} using device {device.DeviceID}");      
+            Log($"** Starting {nameof(Test_OTAA_Confirmed_Receives_C2D_Message)} using device {device.DeviceID}");      
 
             await this.ArduinoDevice.setDeviceModeAsync(LoRaArduinoSerial._device_mode_t.LWOTAA);
             await this.ArduinoDevice.setIdAsync(device.DevAddr, device.DeviceID, device.AppEUI);
@@ -146,7 +146,7 @@ namespace LoRaWan.IntegrationTest
         public async Task Test_OTAA_Unconfirmed_Receives_C2D_Message()
         {
             var device = this.TestFixture.Device10_OTAA;
-            Log($"Starting {nameof(Test_OTAA_Confirmed_Receives_C2D_Message)} using device {device.DeviceID}");      
+            Log($"** Starting {nameof(Test_OTAA_Confirmed_Receives_C2D_Message)} using device {device.DeviceID} **");      
 
             await this.ArduinoDevice.setDeviceModeAsync(LoRaArduinoSerial._device_mode_t.LWOTAA);
             await this.ArduinoDevice.setIdAsync(device.DevAddr, device.DeviceID, device.AppEUI);

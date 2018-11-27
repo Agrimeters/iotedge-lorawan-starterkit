@@ -36,6 +36,12 @@
               "env": {
                 "OptimizeForPerformance": {
                   "value": "false"
+                },
+                "mqttSettings__enabled": {
+                  "value": "false"
+                },
+                "httpSettings__enabled": {
+                  "value": "false"
                 }
               }
             }
@@ -81,6 +87,9 @@
                 },
                 "LOG_TO_UDP": {
                   "value": "true"
+                },
+                "LOG_TO_UDP_ADDRESS": {
+                  "value": "AzureDevOpsAgent"
                 }
               },
               "status": "running",
@@ -125,13 +134,8 @@
                   "HostConfig": { 
                     "Privileged": true 
                   },
-                  "PortBindings": {
-                    "6000/udp": [
-                      {
-                        "HostPort": "6000",
-                        "HostIp": "172.17.0.1"
-                      }
-                    ]
+                  "ExposedPorts": {
+                    "6000/udp": {}
                   }
                 }
               },
