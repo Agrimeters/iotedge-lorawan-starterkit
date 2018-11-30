@@ -85,17 +85,21 @@ From the Facade Azure function, extract the `Host key` of type `_master` and sav
 
 ![Extract Facade function Host key](/pictures/FunctionHostKey.PNG)
 
-- Configure your `.env` file with your [Azure Container registry](https://azure.microsoft.com/en-us/services/container-registry/) as well as the Facade access URL and credentials. Those variables will be used by our [Azure IoT Edge solution template](/LoRaEngine/deployment.template.json). You can find an example of this file [here](/LoRaEngine/modules/example.env)
+- Create your `.env` file in the `/LoRaEngine` folder by copying the `example.env` file located [here](/LoRaEngine/example.env)
+- Configure your `.env` file with your own [Azure Container registry](https://azure.microsoft.com/en-us/services/container-registry/) as well as the Facade access URL and credentials. Set the region to "EU" or "US" based on your location. You do not need to change any of the other settings.
+Those variables will be used by our [Azure IoT Edge solution template](/LoRaEngine/deployment.template.json).
 
 ```{bash}
+...
 CONTAINER_REGISTRY_ADDRESS=yourregistry.azurecr.io
 CONTAINER_REGISTRY_USERNAME=yourlogin
 CONTAINER_REGISTRY_PASSWORD=registrypassword
-PKT_FWD_VERSION=0.0.3
-NET_SRV_VERSION=0.0.2
+...
 REGION=EU
+...
 FACADE_SERVER_URL=https://yourfunction.azurewebsites.net/api/
-FACADE_AUTH_CODE=functionpassword
+FACADE_AUTH_CODE=yourfunctionpassword
+...
 ```
 
 ### Use a Proxy server to connect your Concentrator to Azure
