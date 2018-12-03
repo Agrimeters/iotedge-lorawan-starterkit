@@ -156,7 +156,7 @@
               }
             }
           },
-          "sensordecodermodule": {
+          "sensordecodermodule":{
             "type": "docker",
             "settings": {
               "image": "fbeltrao/decodersample:1.0-arm32v7",
@@ -173,7 +173,7 @@
       "properties.desired": {
         "schemaVersion": "1.0",
         "routes": {
-          "route": "${EDGEHUB_ROUTE}"
+          "route": "$EDGEHUB_ROUTE"
         },
         "storeAndForwardConfiguration": {
           "timeToLiveSecs": 7200
