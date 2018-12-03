@@ -1,10 +1,10 @@
-name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+name: $(Build.SourceBranchName)_$(Build.Reason)_$(majorVersion).$(Build.BuildId)$(Rev:.r)
 variables:
 
   # Major version
   # Dev    = 0.3.0
   # Master = 0.2.0
-  solutionVersion: 0.3.0
+  majorVersion: 0.3.0
 
   # image tag prefix for master branch (0.2.0-preview)
   MASTER_IMAGE_TAG: preview
